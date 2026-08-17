@@ -1,0 +1,2913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>AI Prompt Toolkit — Learn Smarter for ₹1</title>
+
+  <meta
+    name="description"
+    content="A collection of powerful, ready-to-copy AI prompts for studying, research, coding, writing, brainstorming and learning. Get it for just ₹1."
+  />
+
+  <meta name="theme-color" content="#050507" />
+
+  <style>
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      background: #050507;
+      color: #fff;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    a {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    /* =========================================================
+       VARIABLES
+    ========================================================= */
+
+    :root {
+      --bg: #050507;
+      --bg-2: #08080d;
+      --card: #0d0d13;
+      --card-2: #11111a;
+
+      --white: #ffffff;
+      --text: #f5f5f7;
+      --muted: #a0a0ad;
+      --muted-2: #71717d;
+
+      --blue: #5c8dff;
+      --blue-light: #8eb0ff;
+      --purple: #985cff;
+      --cyan: #42d9ff;
+
+      --orange: #ffae61;
+      --green: #36d987;
+
+      --border: rgba(255,255,255,0.09);
+      --border-blue: rgba(92,141,255,0.22);
+
+      --radius: 20px;
+    }
+
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
+
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .gradient-text {
+      background:
+        linear-gradient(
+          110deg,
+          #ffffff 0%,
+          #8eafff 35%,
+          #bb83ff 65%,
+          #ffb76e 100%
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .blue-text {
+      color: var(--blue-light);
+    }
+
+    .orange-text {
+      color: var(--orange);
+    }
+
+    .section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-label {
+      display: inline-block;
+      color: var(--blue-light);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1;
+      letter-spacing: -2.8px;
+      font-weight: 900;
+      max-width: 760px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 650px;
+      margin-top: 18px;
+      font-size: 16px;
+    }
+
+
+    /* =========================================================
+       BACKGROUND EFFECTS
+    ========================================================= */
+
+    .ambient {
+      position: absolute;
+      pointer-events: none;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.15;
+    }
+
+    .ambient-blue {
+      width: 450px;
+      height: 450px;
+      background: #416cff;
+      top: -180px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .ambient-purple {
+      width: 350px;
+      height: 350px;
+      background: #8a40ff;
+      right: -150px;
+      top: 30%;
+    }
+
+    .ambient-orange {
+      width: 300px;
+      height: 300px;
+      background: #ff843f;
+      left: -150px;
+      bottom: 10%;
+      opacity: 0.07;
+    }
+
+
+    /* =========================================================
+       NAVBAR
+    ========================================================= */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      height: 68px;
+
+      background: rgba(5,5,7,0.72);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-mark {
+      width: 31px;
+      height: 31px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 9px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--blue),
+          var(--purple)
+        );
+
+      font-size: 11px;
+
+      box-shadow:
+        0 0 25px rgba(92,141,255,0.25);
+    }
+
+    .brand span {
+      color: var(--blue-light);
+    }
+
+    .nav-cta {
+      padding: 9px 16px;
+
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+
+      background: rgba(255,255,255,0.05);
+
+      font-size: 12px;
+      font-weight: 800;
+
+      transition: 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-1px);
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 850px;
+
+      display: flex;
+      align-items: center;
+
+      text-align: center;
+
+      position: relative;
+      overflow: hidden;
+
+      padding: 80px 0 90px;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(72,111,255,0.14),
+          transparent 35%
+        );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 8px 13px;
+
+      border: 1px solid rgba(92,141,255,0.2);
+      border-radius: 999px;
+
+      background: rgba(92,141,255,0.07);
+
+      color: #b9cbff;
+
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+
+      margin-bottom: 24px;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+
+      background: var(--green);
+
+      box-shadow:
+        0 0 12px var(--green);
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      margin: 0 auto;
+
+      font-size: clamp(45px, 7.5vw, 84px);
+      line-height: 0.96;
+
+      font-weight: 950;
+
+      letter-spacing: -5px;
+    }
+
+    .hero-description {
+      max-width: 680px;
+
+      margin: 25px auto 0;
+
+      color: var(--muted);
+
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .hero-price {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 12px;
+
+      margin: 28px 0 24px;
+    }
+
+    .price {
+      font-size: 60px;
+      line-height: 1;
+
+      font-weight: 950;
+
+      letter-spacing: -4px;
+
+      color: #fff;
+
+      text-shadow:
+        0 0 50px rgba(255,174,97,0.22);
+    }
+
+    .price-label {
+      color: var(--muted);
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .price-label strong {
+      display: block;
+      color: #fff;
+    }
+
+    .hero-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      padding: 16px 26px;
+
+      border-radius: 14px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #5f8cff,
+          #965aff
+        );
+
+      box-shadow:
+        0 15px 50px rgba(92,141,255,0.22),
+        inset 0 1px rgba(255,255,255,0.3);
+
+      font-weight: 850;
+      font-size: 15px;
+
+      transition: 0.25s ease;
+    }
+
+    .hero-button:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 20px 65px rgba(92,141,255,0.34),
+        inset 0 1px rgba(255,255,255,0.3);
+    }
+
+    .hero-note {
+      margin-top: 12px;
+
+      color: var(--muted-2);
+
+      font-size: 11px;
+    }
+
+
+    /* =========================================================
+       PRODUCT MOCKUP
+    ========================================================= */
+
+    .product-wrap {
+      width: min(760px, 100%);
+
+      margin: 70px auto 0;
+
+      perspective: 1400px;
+    }
+
+    .product-card {
+      position: relative;
+
+      min-height: 410px;
+
+      padding: 34px;
+
+      text-align: left;
+
+      overflow: hidden;
+
+      border-radius: 27px;
+
+      border: 1px solid rgba(255,255,255,0.11);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,0.075),
+          rgba(255,255,255,0.018)
+        ),
+        #0a0a10;
+
+      box-shadow:
+        0 50px 130px rgba(0,0,0,0.65),
+        0 0 100px rgba(92,141,255,0.08);
+
+      transform:
+        rotateX(4deg)
+        rotateY(-2deg);
+
+      transition: 0.5s ease;
+    }
+
+    .product-card:hover {
+      transform:
+        rotateX(1deg)
+        rotateY(0deg)
+        translateY(-5px);
+    }
+
+    .product-glow {
+      position: absolute;
+
+      width: 330px;
+      height: 330px;
+
+      right: -100px;
+      top: -120px;
+
+      background: var(--blue);
+
+      filter: blur(120px);
+
+      opacity: 0.18;
+    }
+
+    .product-glow-2 {
+      position: absolute;
+
+      width: 280px;
+      height: 280px;
+
+      left: -120px;
+      bottom: -130px;
+
+      background: var(--purple);
+
+      filter: blur(120px);
+
+      opacity: 0.1;
+    }
+
+    .product-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .product-label {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 2px;
+
+      color: var(--blue-light);
+    }
+
+    .product-icon {
+      width: 43px;
+      height: 43px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--blue),
+          var(--purple)
+        );
+
+      font-size: 12px;
+      font-weight: 950;
+
+      box-shadow:
+        0 10px 30px rgba(92,141,255,0.2);
+    }
+
+    .product-main {
+      position: relative;
+      z-index: 2;
+
+      margin-top: 72px;
+    }
+
+    .product-title {
+      font-size: clamp(35px, 6vw, 58px);
+
+      line-height: 0.98;
+
+      letter-spacing: -3px;
+
+      font-weight: 950;
+    }
+
+    .product-subtitle {
+      max-width: 520px;
+
+      margin-top: 20px;
+
+      color: #92929f;
+
+      font-size: 14px;
+    }
+
+    .product-tags {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 24px;
+    }
+
+    .product-tag {
+      padding: 7px 10px;
+
+      border-radius: 8px;
+
+      background: rgba(255,255,255,0.05);
+
+      border: 1px solid rgba(255,255,255,0.07);
+
+      color: #b7b7c2;
+
+      font-family: monospace;
+
+      font-size: 10px;
+    }
+
+
+    /* =========================================================
+       TRUST STRIP
+    ========================================================= */
+
+    .trust-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+
+      background: rgba(255,255,255,0.015);
+    }
+
+    .trust-inner {
+      min-height: 90px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 45px;
+
+      flex-wrap: wrap;
+
+      color: #747480;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .trust-icon {
+      color: var(--blue-light);
+    }
+
+
+    /* =========================================================
+       FEATURES
+    ========================================================= */
+
+    .features-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 14px;
+
+      margin-top: 45px;
+    }
+
+    .feature-card {
+      padding: 26px;
+
+      border-radius: var(--radius);
+
+      border: 1px solid var(--border);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.045),
+          rgba(255,255,255,0.015)
+        );
+
+      transition: 0.25s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+
+      border-color:
+        rgba(92,141,255,0.25);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(92,141,255,0.07),
+          rgba(255,255,255,0.015)
+        );
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background: rgba(92,141,255,0.09);
+
+      border: 1px solid rgba(92,141,255,0.12);
+
+      font-size: 20px;
+
+      margin-bottom: 18px;
+    }
+
+    .feature-card h3 {
+      font-size: 17px;
+
+      letter-spacing: -0.3px;
+
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      color: #8f8f9c;
+
+      font-size: 13px;
+
+      line-height: 1.65;
+    }
+
+
+    /* =========================================================
+       GLIMPSE / PROMPTS
+    ========================================================= */
+
+    .glimpse {
+      background:
+        radial-gradient(
+          circle at 15% 50%,
+          rgba(92,141,255,0.07),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 85% 50%,
+          rgba(152,92,255,0.06),
+          transparent 30%
+        );
+    }
+
+    .prompt-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 15px;
+
+      margin-top: 42px;
+    }
+
+    .prompt-card {
+      position: relative;
+
+      padding: 25px;
+
+      border-radius: 18px;
+
+      border: 1px solid var(--border);
+
+      background:
+        rgba(8,8,13,0.75);
+
+      overflow: hidden;
+    }
+
+    .prompt-card::before {
+      content: "";
+
+      position: absolute;
+
+      width: 130px;
+      height: 130px;
+
+      background: var(--blue);
+
+      filter: blur(80px);
+
+      opacity: 0.07;
+
+      right: -60px;
+      top: -60px;
+    }
+
+    .prompt-number {
+      color: var(--blue-light);
+
+      font-family: monospace;
+
+      font-size: 10px;
+
+      font-weight: 900;
+
+      letter-spacing: 1px;
+    }
+
+    .prompt-title {
+      margin-top: 10px;
+
+      font-size: 17px;
+
+      font-weight: 850;
+    }
+
+    .prompt-text {
+      margin-top: 13px;
+
+      color: #9b9ba7;
+
+      font-family: monospace;
+
+      font-size: 12px;
+
+      line-height: 1.75;
+    }
+
+
+    /* =========================================================
+       FLOW SECTION
+    ========================================================= */
+
+    .flow {
+      margin-top: 50px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 12px;
+    }
+
+    .flow-card {
+      position: relative;
+
+      padding: 24px 20px;
+
+      border-radius: 17px;
+
+      background: rgba(255,255,255,0.025);
+
+      border: 1px solid var(--border);
+    }
+
+    .flow-number {
+      color: #68728b;
+
+      font-size: 11px;
+
+      font-weight: 900;
+
+      margin-bottom: 20px;
+    }
+
+    .flow-card h3 {
+      font-size: 15px;
+
+      margin-bottom: 7px;
+    }
+
+    .flow-card p {
+      color: #888895;
+
+      font-size: 12px;
+
+      line-height: 1.6;
+    }
+
+
+    /* =========================================================
+       AUDIENCE
+    ========================================================= */
+
+    .audience-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 12px;
+
+      margin-top: 40px;
+    }
+
+    .audience-card {
+      display: flex;
+
+      align-items: center;
+
+      gap: 13px;
+
+      padding: 17px;
+
+      border-radius: 14px;
+
+      border: 1px solid var(--border);
+
+      background: rgba(255,255,255,0.025);
+    }
+
+    .audience-icon {
+      width: 38px;
+      height: 38px;
+
+      flex-shrink: 0;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 10px;
+
+      background: rgba(92,141,255,0.08);
+    }
+
+    .audience-card strong {
+      font-size: 13px;
+    }
+
+
+    /* =========================================================
+       PAYMENT
+    ========================================================= */
+
+    .payment-section {
+      padding-top: 40px;
+
+      background:
+        radial-gradient(
+          circle at 50% 50%,
+          rgba(92,141,255,0.07),
+          transparent 38%
+        );
+    }
+
+    .payment-heading {
+      text-align: center;
+    }
+
+    .payment-heading .section-description {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .payment-card {
+      width: min(650px, 100%);
+
+      margin: 45px auto 0;
+
+      padding: 35px;
+
+      border-radius: 27px;
+
+      border: 1px solid rgba(92,141,255,0.19);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(92,141,255,0.075),
+          rgba(152,92,255,0.025)
+        ),
+        #09090e;
+
+      box-shadow:
+        0 35px 100px rgba(0,0,0,0.45);
+    }
+
+    .payment-price {
+      text-align: center;
+
+      font-size: 76px;
+
+      line-height: 1;
+
+      font-weight: 950;
+
+      letter-spacing: -5px;
+
+      margin-bottom: 8px;
+    }
+
+    .payment-price span {
+      color: var(--orange);
+    }
+
+    .payment-caption {
+      text-align: center;
+
+      color: #888894;
+
+      font-size: 13px;
+
+      margin-bottom: 30px;
+    }
+
+
+    /* =========================================================
+       UPI BOX
+    ========================================================= */
+
+    .upi-box {
+      padding: 19px;
+
+      border-radius: 16px;
+
+      background: #050507;
+
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .upi-label {
+      color: #6f6f7b;
+
+      font-size: 10px;
+
+      font-weight: 900;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 10px;
+    }
+
+    .upi-row {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 10px;
+    }
+
+    .upi-id {
+      color: #fff;
+
+      font-family: monospace;
+
+      font-size: 16px;
+
+      font-weight: 700;
+
+      word-break: break-all;
+    }
+
+    .copy-upi {
+      width: 42px;
+      height: 42px;
+
+      flex-shrink: 0;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 11px;
+
+      border: 1px solid rgba(255,255,255,0.1);
+
+      background: rgba(255,255,255,0.06);
+
+      color: #d6d6de;
+
+      transition: 0.2s ease;
+    }
+
+    .copy-upi:hover {
+      background: rgba(92,141,255,0.15);
+
+      border-color:
+        rgba(92,141,255,0.3);
+
+      color: #9eb7ff;
+    }
+
+    .copy-upi.copied {
+      background: rgba(54,217,135,0.12);
+
+      border-color:
+        rgba(54,217,135,0.3);
+
+      color: var(--green);
+    }
+
+    .copy-status {
+      margin-top: 9px;
+
+      color: #696975;
+
+      font-size: 10px;
+    }
+
+
+    /* =========================================================
+       STEPS
+    ========================================================= */
+
+    .payment-steps {
+      display: grid;
+
+      gap: 13px;
+
+      margin-top: 28px;
+    }
+
+    .payment-step {
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 13px;
+    }
+
+    .step-number {
+      width: 29px;
+      height: 29px;
+
+      flex-shrink: 0;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--blue),
+          var(--purple)
+        );
+
+      font-size: 11px;
+
+      font-weight: 900;
+    }
+
+    .payment-step p {
+      color: #9999a5;
+
+      font-size: 13px;
+
+      padding-top: 4px;
+    }
+
+    .payment-step strong {
+      color: #fff;
+    }
+
+
+    /* =========================================================
+       INSTAGRAM BUTTON
+    ========================================================= */
+
+    .instagram-button {
+      width: 100%;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      padding: 15px 20px;
+
+      margin-top: 27px;
+
+      border-radius: 13px;
+
+      background:
+        linear-gradient(
+          100deg,
+          #833ab4,
+          #fd1d1d,
+          #fcb045
+        );
+
+      font-weight: 850;
+
+      box-shadow:
+        0 12px 40px rgba(253,29,29,0.15);
+
+      transition: 0.25s ease;
+    }
+
+    .instagram-button:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 18px 50px rgba(253,29,29,0.25);
+    }
+
+    .delivery-note {
+      text-align: center;
+
+      color: #686873;
+
+      font-size: 10px;
+
+      line-height: 1.6;
+
+      margin-top: 15px;
+    }
+
+
+    /* =========================================================
+       FAQ
+    ========================================================= */
+
+    .faq-container {
+      max-width: 760px;
+    }
+
+    .faq-list {
+      margin-top: 35px;
+    }
+
+    details {
+      border-bottom: 1px solid var(--border);
+
+      padding: 20px 0;
+    }
+
+    summary {
+      cursor: pointer;
+
+      list-style: none;
+
+      font-size: 14px;
+
+      font-weight: 800;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+
+      color: #70707b;
+
+      font-size: 20px;
+
+      font-weight: 400;
+
+      transition: 0.2s ease;
+    }
+
+    details[open] summary::after {
+      transform: rotate(45deg);
+
+      color: var(--blue-light);
+    }
+
+    details p {
+      color: #858591;
+
+      font-size: 13px;
+
+      line-height: 1.7;
+
+      margin-top: 12px;
+
+      max-width: 650px;
+    }
+
+
+    /* =========================================================
+       FINAL CTA
+    ========================================================= */
+
+    .final-cta {
+      text-align: center;
+
+      padding: 110px 0;
+
+      border-top: 1px solid var(--border);
+
+      background:
+        radial-gradient(
+          circle at 50% 50%,
+          rgba(92,141,255,0.1),
+          transparent 40%
+        );
+    }
+
+    .final-cta h2 {
+      max-width: 800px;
+
+      margin: 0 auto;
+
+      font-size: clamp(38px, 6vw, 65px);
+
+      line-height: 0.98;
+
+      letter-spacing: -3px;
+
+      font-weight: 950;
+    }
+
+    .final-cta p {
+      color: var(--muted);
+
+      max-width: 550px;
+
+      margin: 20px auto 28px;
+
+      font-size: 15px;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 35px 0;
+
+      border-top: 1px solid var(--border);
+
+      color: #62626d;
+
+      text-align: center;
+
+      font-size: 10px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 800px) {
+
+      .section {
+        padding: 75px 0;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .flow {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .audience-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: min(100% - 22px, 1100px);
+      }
+
+      .navbar {
+        height: 62px;
+      }
+
+      .hero {
+        min-height: auto;
+
+        padding:
+          55px 0
+          65px;
+      }
+
+      .hero h1 {
+        font-size: clamp(42px, 13vw, 62px);
+
+        letter-spacing: -3px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+
+        line-height: 1.65;
+      }
+
+      .price {
+        font-size: 52px;
+      }
+
+      .product-wrap {
+        margin-top: 55px;
+      }
+
+      .product-card {
+        min-height: 330px;
+
+        padding: 23px;
+
+        border-radius: 21px;
+      }
+
+      .product-main {
+        margin-top: 55px;
+      }
+
+      .product-title {
+        font-size: 38px;
+
+        letter-spacing: -2px;
+      }
+
+      .trust-inner {
+        gap: 20px;
+
+        padding: 20px 0;
+      }
+
+      .features-grid,
+      .prompt-grid,
+      .audience-grid,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        letter-spacing: -2px;
+      }
+
+      .payment-card {
+        padding: 23px 17px;
+
+        border-radius: 21px;
+      }
+
+      .payment-price {
+        font-size: 62px;
+      }
+
+      .upi-id {
+        font-size: 14px;
+      }
+
+      .final-cta {
+        padding: 80px 0;
+      }
+
+      .final-cta h2 {
+        letter-spacing: -2.5px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================================================
+       NAVIGATION
+  ========================================================= -->
+
+  <nav class="navbar">
+
+    <div class="container nav-inner">
+
+      <a href="#" class="brand">
+
+        <div class="brand-mark">
+          AI
+        </div>
+
+        PROMPT<span>VAULT</span>
+
+      </a>
+
+
+      <a href="#get" class="nav-cta">
+        Get for ₹1 →
+      </a>
+
+    </div>
+
+  </nav>
+
+
+
+  <!-- =========================================================
+       HERO
+  ========================================================= -->
+
+  <header class="hero">
+
+    <div class="ambient ambient-blue"></div>
+
+    <div class="container hero-content">
+
+      <div class="badge">
+        <span class="badge-dot"></span>
+        AI PROMPT TOOLKIT FOR STUDENTS & CREATORS
+      </div>
+
+
+      <h1>
+
+        Stop asking AI
+        <span class="gradient-text">
+          random questions.
+        </span>
+
+        <br />
+
+        Start asking
+        <span class="gradient-text">
+          better ones.
+        </span>
+
+      </h1>
+
+
+      <p class="hero-description">
+
+        A collection of powerful, ready-to-copy AI commands
+        for <strong>studying, research, coding, writing,
+        brainstorming, productivity</strong> and understanding
+        complex concepts.
+
+      </p>
+
+
+      <div class="hero-price">
+
+        <div class="price">
+          ₹1
+        </div>
+
+        <div class="price-label">
+          <strong>That's it.</strong>
+          One PDF. Hundreds of prompts.
+        </div>
+
+      </div>
+
+
+      <a
+        href="#get"
+        class="hero-button"
+      >
+        Get the Prompt PDF for ₹1
+        →
+      </a>
+
+
+      <div class="hero-note">
+
+        Pay using UPI • Send screenshot on Instagram • Receive PDF
+
+      </div>
+
+
+
+      <!-- PRODUCT MOCKUP -->
+
+      <div class="product-wrap">
+
+        <div class="product-card">
+
+          <div class="product-glow"></div>
+
+          <div class="product-glow-2"></div>
+
+
+          <div class="product-header">
+
+            <div class="product-label">
+              AI CREATIVE & LEARNING TOOLKIT
+            </div>
+
+            <div class="product-icon">
+              AI
+            </div>
+
+          </div>
+
+
+          <div class="product-main">
+
+            <div class="product-title">
+
+              AI Prompt
+              <br />
+
+              <span class="gradient-text">
+                Vault.
+              </span>
+
+            </div>
+
+
+            <p class="product-subtitle">
+
+              Ready-to-copy commands for learning,
+              researching, understanding, creating
+              and working smarter with AI.
+
+            </p>
+
+
+            <div class="product-tags">
+
+              <div class="product-tag">
+                STUDY
+              </div>
+
+              <div class="product-tag">
+                RESEARCH
+              </div>
+
+              <div class="product-tag">
+                CODING
+              </div>
+
+              <div class="product-tag">
+                WRITING
+              </div>
+
+              <div class="product-tag">
+                BRAINSTORM
+              </div>
+
+              <div class="product-tag">
+                PRODUCTIVITY
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================================================
+       TRUST STRIP
+  ========================================================= -->
+
+  <div class="trust-strip">
+
+    <div class="container trust-inner">
+
+      <div class="trust-item">
+        <span class="trust-icon">✓</span>
+        Ready to copy
+      </div>
+
+      <div class="trust-item">
+        <span class="trust-icon">✓</span>
+        Beginner friendly
+      </div>
+
+      <div class="trust-item">
+        <span class="trust-icon">✓</span>
+        Study focused
+      </div>
+
+      <div class="trust-item">
+        <span class="trust-icon">✓</span>
+        Works with popular AI tools
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================================================
+       WHAT'S INSIDE
+  ========================================================= -->
+
+  <section class="section">
+
+    <div class="ambient ambient-purple"></div>
+
+    <div class="container">
+
+      <div class="section-label">
+        WHAT'S INSIDE
+      </div>
+
+
+      <h2 class="section-title">
+
+        One PDF.
+        <br />
+
+        <span class="gradient-text">
+          Many ways to use AI.
+        </span>
+
+      </h2>
+
+
+      <p class="section-description">
+
+        Instead of starting from a blank chat box,
+        use structured commands to help AI explain,
+        organize, analyze and develop your ideas.
+
+      </p>
+
+
+
+      <div class="features-grid">
+
+
+        <!-- STUDY -->
+
+        <div class="feature-card">
+
+          <div class="feature-icon">
+            📚
+          </div>
+
+          <h3>
+            Study & Learn
+          </h3>
+
+          <p>
+            Understand subjects, create study plans,
+            make revision notes, generate practice
+            questions and learn step-by-step.
+          </p>
+
+        </div>
+
+
+        <!-- COMPLEX CONCEPTS -->
+
+        <div class="feature-card">
+
+          <div class="feature-icon">
+            🧠
+          </div>
+
+          <h3>
+            Simplify Complex Concepts
+          </h3>
+
+          <p>
+            Ask AI to explain difficult topics
+            in simple language using analogies,
+            examples and step-by-step explanations.
+          </p>
+
+        </div>
+
+
+        <!-- RESEARCH -->
+
+        <div class="feature-card">
+
+          <div class="feature-icon">
+            🔬
+          </div>
+
+          <h3>
+            Research
+          </h3>
+
+          <p>
+            Break large topics into smaller questions,
+            compare ideas, identify connections and
+            structure your research.
+          </p>
+
+        </div>
+
+
+        <!-- CODING -->
+
+        <div class="feature-card">
+
+          <div class="feature-icon">
+            💻
+          </div>
+
+          <h3>
+            Coding & Tech
+          </h3>
+
+          <p>
+            Break down programming concepts,
+            understand errors, explore code and
+            learn technical topics more clearly.
+          </p>
+
+        </div>
+
+
+        <!-- WRITING -->
+
+        <div class="feature-card">
+
+          <div class="feature-icon">
+            ✍️
+          </div>
+
+          <h3>
+            Writing
+          </h3>
+
+          <p>
+            Brainstorm ideas, create outlines,
+            improve clarity, summarize information
+            and structure your thoughts.
+          </p>
+
+        </div>
+
+
+        <!-- PRODUCTIVITY -->
+
+        <div class="feature-card">
+
+          <div class="feature-icon">
+            ⚡
+          </div>
+
+          <h3>
+            Productivity
+          </h3>
+
+          <p>
+            Turn goals into action plans,
+            organize information, create workflows
+            and make everyday tasks easier.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================================
+       PROMPT GLIMPSE
+  ========================================================= -->
+
+  <section class="section glimpse">
+
+    <div class="container">
+
+      <div class="section-label">
+        A GLIMPSE INSIDE
+      </div>
+
+
+      <h2 class="section-title">
+
+        See how a simple
+        <span class="gradient-text">
+          command changes the conversation.
+        </span>
+
+      </h2>
+
+
+      <p class="section-description">
+
+        These are examples of the type of structured
+        commands included in the PDF.
+
+      </p>
+
+
+
+      <div class="prompt-grid">
+
+
+        <!-- PROMPT 1 -->
+
+        <div class="prompt-card">
+
+          <div class="prompt-number">
+            PROMPT 01 / MAKE IT SIMPLE
+          </div>
+
+          <div class="prompt-title">
+            Understand a difficult topic
+          </div>
+
+          <div class="prompt-text">
+
+            "Explain this concept as if I'm completely
+            new to the topic. Start with the basic idea,
+            then gradually introduce the difficult parts.
+            Use a real-world analogy and finish with
+            a simple example."
+
+          </div>
+
+        </div>
+
+
+
+        <!-- PROMPT 2 -->
+
+        <div class="prompt-card">
+
+          <div class="prompt-number">
+            PROMPT 02 / STUDY MODE
+          </div>
+
+          <div class="prompt-title">
+            Turn AI into a tutor
+          </div>
+
+          <div class="prompt-text">
+
+            "Act as my personal tutor. Teach me this
+            topic step-by-step. After each section,
+            ask me a question to check whether I
+            understood before moving forward."
+
+          </div>
+
+        </div>
+
+
+
+        <!-- PROMPT 3 -->
+
+        <div class="prompt-card">
+
+          <div class="prompt-number">
+            PROMPT 03 / RESEARCH MODE
+          </div>
+
+          <div class="prompt-title">
+            Explore a topic deeply
+          </div>
+
+          <div class="prompt-text">
+
+            "Break this topic into the most important
+            subtopics. Explain how they connect,
+            identify common misconceptions and give
+            me questions I should investigate further."
+
+          </div>
+
+        </div>
+
+
+
+        <!-- PROMPT 4 -->
+
+        <div class="prompt-card">
+
+          <div class="prompt-number">
+            PROMPT 04 / EXAM MODE
+          </div>
+
+          <div class="prompt-title">
+            Create a revision guide
+          </div>
+
+          <div class="prompt-text">
+
+            "Turn this topic into a revision guide
+            containing key concepts, important
+            definitions, likely questions, common
+            mistakes and a short self-test."
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================================
+       HOW IT WORKS
+  ========================================================= -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-label">
+        THE SIMPLE METHOD
+      </div>
+
+
+      <h2 class="section-title">
+
+        Don't memorize.
+        <br />
+
+        <span class="gradient-text">
+          Just copy & customize.
+        </span>
+
+      </h2>
+
+
+      <p class="section-description">
+
+        The prompts are designed to give you a useful
+        starting point. Customize them with your own
+        topic, subject or goal.
+
+      </p>
+
+
+
+      <div class="flow">
+
+
+        <div class="flow-card">
+
+          <div class="flow-number">
+            01
+          </div>
+
+          <h3>
+            Choose
+          </h3>
+
+          <p>
+            Pick a command that matches what you're
+            trying to accomplish.
+          </p>
+
+        </div>
+
+
+        <div class="flow-card">
+
+          <div class="flow-number">
+            02
+          </div>
+
+          <h3>
+            Copy
+          </h3>
+
+          <p>
+            Copy the ready-to-use command from the PDF.
+          </p>
+
+        </div>
+
+
+        <div class="flow-card">
+
+          <div class="flow-number">
+            03
+          </div>
+
+          <h3>
+            Customize
+          </h3>
+
+          <p>
+            Replace the topic or details with your own.
+          </p>
+
+        </div>
+
+
+        <div class="flow-card">
+
+          <div class="flow-number">
+            04
+          </div>
+
+          <h3>
+            Explore
+          </h3>
+
+          <p>
+            Experiment with the AI response and
+            improve your understanding.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================================
+       WHO IS IT FOR
+  ========================================================= -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-label">
+        WHO IS THIS FOR?
+      </div>
+
+
+      <h2 class="section-title">
+
+        Built for people who
+        <span class="gradient-text">
+          want to learn.
+        </span>
+
+      </h2>
+
+
+      <p class="section-description">
+
+        Whether you're a student, coder, creator or
+        simply curious about AI, you can adapt the
+        commands to your own use case.
+
+      </p>
+
+
+
+      <div class="audience-grid">
+
+
+        <div class="audience-card">
+
+          <div class="audience-icon">
+            🎓
+          </div>
+
+          <strong>
+            Students
+          </strong>
+
+        </div>
+
+
+        <div class="audience-card">
+
+          <div class="audience-icon">
+            💻
+          </div>
+
+          <strong>
+            Coders & Tech Learners
+          </strong>
+
+        </div>
+
+
+        <div class="audience-card">
+
+          <div class="audience-icon">
+            🔬
+          </div>
+
+          <strong>
+            Researchers
+          </strong>
+
+        </div>
+
+
+        <div class="audience-card">
+
+          <div class="audience-icon">
+            🎨
+          </div>
+
+          <strong>
+            Creators & Designers
+          </strong>
+
+        </div>
+
+
+        <div class="audience-card">
+
+          <div class="audience-icon">
+            ✍️
+          </div>
+
+          <strong>
+            Writers
+          </strong>
+
+        </div>
+
+
+        <div class="audience-card">
+
+          <div class="audience-icon">
+            🤖
+          </div>
+
+          <strong>
+            AI Beginners
+          </strong>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================================
+       PAYMENT
+  ========================================================= -->
+
+  <section
+    class="section payment-section"
+    id="get"
+  >
+
+    <div class="container">
+
+      <div class="payment-heading">
+
+        <div class="section-label">
+          GET THE PDF
+        </div>
+
+
+        <h2 class="section-title"
+            style="margin-left:auto;margin-right:auto;">
+
+          Everything you need
+          <br />
+
+          for <span class="orange-text">₹1.</span>
+
+        </h2>
+
+
+        <p class="section-description">
+
+          No complicated checkout.
+          Pay using UPI, send your payment screenshot
+          on Instagram and receive the PDF.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="payment-card">
+
+
+        <div class="payment-price">
+
+          <span>₹</span>1
+
+        </div>
+
+
+        <div class="payment-caption">
+
+          One PDF • Manual verification • Instagram delivery
+
+        </div>
+
+
+
+        <!-- =====================================================
+             UPI
+        ====================================================== -->
+
+        <div class="upi-box">
+
+          <div class="upi-label">
+            Your UPI ID
+          </div>
+
+
+          <div class="upi-row">
+
+            <!-- CHANGE THIS UPI ID -->
+
+            <span
+              class="upi-id"
+              id="upiId"
+            >
+              8056894608@kotakbank
+            </span>
+
+
+            <!-- COPY ICON -->
+
+            <button
+              class="copy-upi"
+              id="copyButton"
+              onclick="copyUPI()"
+              aria-label="Copy UPI ID"
+              title="Copy UPI ID"
+            >
+
+              <!-- SVG COPY ICON -->
+
+              <svg
+                id="copyIcon"
+                width="19"
+                height="19"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+
+                <rect
+                  x="9"
+                  y="9"
+                  width="13"
+                  height="13"
+                  rx="2"
+                />
+
+                <path
+                  d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                />
+
+              </svg>
+
+            </button>
+
+          </div>
+
+
+          <div
+            class="copy-status"
+            id="copyStatus"
+          >
+            Tap the copy icon to copy your UPI ID
+          </div>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             PAYMENT STEPS
+        ====================================================== -->
+
+        <div class="payment-steps">
+
+
+          <div class="payment-step">
+
+            <div class="step-number">
+              1
+            </div>
+
+            <p>
+              Open any UPI app and pay
+              <strong>₹1</strong>
+              to the UPI ID above.
+            </p>
+
+          </div>
+
+
+          <div class="payment-step">
+
+            <div class="step-number">
+              2
+            </div>
+
+            <p>
+              Take a screenshot of your
+              <strong>successful payment</strong>.
+            </p>
+
+          </div>
+
+
+          <div class="payment-step">
+
+            <div class="step-number">
+              3
+            </div>
+
+            <p>
+              Send the screenshot to our
+              <strong>Instagram DM</strong>.
+            </p>
+
+          </div>
+
+
+          <div class="payment-step">
+
+            <div class="step-number">
+              4
+            </div>
+
+            <p>
+              After verification, we'll send the
+              <strong>PDF to you on Instagram</strong>.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- =====================================================
+             INSTAGRAM BUTTON
+        ====================================================== -->
+
+        <!-- CHANGE INSTAGRAM USERNAME -->
+
+        <a
+          href="https://www.instagram.com/genzc.oder/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="instagram-button"
+        >
+
+          <!-- INSTAGRAM SVG -->
+
+          <svg
+            width="19"
+            height="19"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+
+            <rect
+              x="3"
+              y="3"
+              width="18"
+              height="18"
+              rx="5"
+            />
+
+            <circle
+              cx="12"
+              cy="12"
+              r="4"
+            />
+
+            <circle
+              cx="17.5"
+              cy="6.5"
+              r="1"
+              fill="currentColor"
+              stroke="none"
+            />
+
+          </svg>
+
+
+          Send Payment Screenshot on Instagram
+
+        </a>
+
+
+        <div class="delivery-note">
+
+          Payment verification and PDF delivery are currently
+          handled manually through Instagram DM.
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================================
+       FAQ
+  ========================================================= -->
+
+  <section class="section">
+
+    <div class="container faq-container">
+
+      <div class="section-label">
+        FAQ
+      </div>
+
+
+      <h2 class="section-title">
+
+        Before you
+        <span class="gradient-text">
+          get it.
+        </span>
+
+      </h2>
+
+
+
+      <div class="faq-list">
+
+
+        <details>
+
+          <summary>
+            What exactly do I get?
+          </summary>
+
+          <p>
+
+            You receive a digital PDF containing
+            a collection of ready-to-copy AI commands
+            covering studying, research, concept
+            explanations, coding, writing, brainstorming
+            and productivity.
+
+          </p>
+
+        </details>
+
+
+
+        <details>
+
+          <summary>
+            Which AI tools can I use these with?
+          </summary>
+
+          <p>
+
+            The commands can be adapted for popular
+            AI assistants such as ChatGPT, Gemini
+            and other AI tools. Results can vary
+            depending on the model and how you customize
+            the command.
+
+          </p>
+
+        </details>
+
+
+
+        <details>
+
+          <summary>
+            Is this useful for students?
+          </summary>
+
+          <p>
+
+            Yes. Several commands are focused on
+            understanding difficult concepts, creating
+            study plans, revision, practice questions,
+            research and learning topics step-by-step.
+
+          </p>
+
+        </details>
+
+
+
+        <details>
+
+          <summary>
+            How will I receive the PDF?
+          </summary>
+
+          <p>
+
+            After paying ₹1, take a screenshot of
+            the successful payment and send it to
+            our Instagram account. After verification,
+            the PDF will be sent through Instagram DM.
+
+          </p>
+
+        </details>
+
+
+
+        <details>
+
+          <summary>
+            Is delivery automatic?
+          </summary>
+
+          <p>
+
+            Not currently. Payment verification and
+            delivery are handled manually through
+            Instagram DM.
+
+          </p>
+
+        </details>
+
+
+
+        <details>
+
+          <summary>
+            Will AI always give the same answer?
+          </summary>
+
+          <p>
+
+            No. AI responses can vary depending on
+            the AI tool, model, settings and context.
+            The commands are designed as useful
+            starting points rather than guaranteed
+            outcomes.
+
+          </p>
+
+        </details>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================================
+       FINAL CTA
+  ========================================================= -->
+
+  <section class="final-cta">
+
+    <div class="container">
+
+      <div class="section-label">
+        READY?
+      </div>
+
+
+      <h2>
+
+        Your next question
+        <span class="gradient-text">
+          could be better.
+        </span>
+
+      </h2>
+
+
+      <p>
+
+        Get a collection of ready-to-copy AI commands
+        and start experimenting with better ways to
+        learn, research and create.
+
+      </p>
+
+
+      <a
+        href="#get"
+        class="hero-button"
+      >
+
+        Get the AI Prompt Toolkit — ₹1
+        →
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================= -->
+
+  <footer>
+
+    <div class="container">
+
+      © 2026 AI Prompt Vault.
+
+      <br />
+
+      Digital product • Manual payment verification
+      • Manual Instagram delivery
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================= -->
+
+  <script>
+
+    /* =========================================================
+       COPY UPI
+    ========================================================= */
+
+    function copyUPI() {
+
+      const upiElement =
+        document.getElementById("upiId");
+
+      const copyButton =
+        document.getElementById("copyButton");
+
+      const copyStatus =
+        document.getElementById("copyStatus");
+
+      const upi =
+        upiElement.innerText.trim();
+
+
+      navigator.clipboard.writeText(upi)
+
+        .then(() => {
+
+          copyButton.classList.add("copied");
+
+          copyStatus.innerText =
+            "UPI ID copied ✓";
+
+          copyStatus.style.color =
+            "#36d987";
+
+
+          /* Change icon to check */
+
+          copyButton.innerHTML = `
+
+            <svg
+              width="19"
+              height="19"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+
+              <path d="M20 6L9 17l-5-5"/>
+
+            </svg>
+
+          `;
+
+
+          /* Reset after 2 seconds */
+
+          setTimeout(() => {
+
+            copyButton.classList.remove("copied");
+
+            copyStatus.innerText =
+              "Tap the copy icon to copy your UPI ID";
+
+            copyStatus.style.color =
+              "";
+
+
+            copyButton.innerHTML = `
+
+              <svg
+                width="19"
+                height="19"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+
+                <rect
+                  x="9"
+                  y="9"
+                  width="13"
+                  height="13"
+                  rx="2"
+                />
+
+                <path
+                  d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                />
+
+              </svg>
+
+            `;
+
+          }, 2000);
+
+        })
+
+        .catch(() => {
+
+          copyStatus.innerText =
+            "Copy failed — please copy the UPI ID manually.";
+
+          copyStatus.style.color =
+            "#ff7b7b";
+
+        });
+
+    }
+
+
+    /* =========================================================
+       SMOOTH SCROLL FOR ANCHOR LINKS
+    ========================================================= */
+
+    document.querySelectorAll(
+      'a[href^="#"]'
+    ).forEach(link => {
+
+      link.addEventListener(
+        "click",
+        function(event) {
+
+          const target =
+            document.querySelector(
+              this.getAttribute("href")
+            );
+
+          if (target) {
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+
+          }
+
+        }
+      );
+
+    });
+
+  </script>
+
+</body>
+</html>
